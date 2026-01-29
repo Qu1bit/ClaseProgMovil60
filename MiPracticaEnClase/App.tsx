@@ -3,18 +3,33 @@ import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from './src/components/CustomButton';
 
 export default function App() {
+  const handleOnLogin = () => {
+    console.log("prueba login desde app");
+    alert("Alerta login desde app");
+  }
+
+  const handleOnLogout = () => {
+    alert("Alerta logout desde app");
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Feibu!</Text>
+      <Text>Open up App</Text>
       <StatusBar style="auto" />
-      <CustomButton/>
+      <CustomButton 
+          title={'Login'} 
+          onClick={handleOnLogin} />
+      <CustomButton 
+          title={'Salir'}
+          onClick={handleOnLogout} />
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5cdce8',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -16,12 +16,19 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App</Text>
       <StatusBar style="auto" />
-      <CustomButton 
-          title={'Login'} 
-          onClick={handleOnLogin} />
-      <CustomButton 
-          title={'Salir'}
-          onClick={handleOnLogout} />
+      <View style={styles.buttonsWrapper}>
+        <View style={styles.card}>
+        <CustomButton 
+            title={'Login'} 
+            onClick={handleOnLogin} 
+            />
+        <CustomButton 
+            title={'Salir'}
+            onClick={handleOnLogout}
+            variant={'secondary'} 
+            />
+        </View>
+      </View>
     </View>
   );
 }
@@ -29,8 +36,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  card:{
+    width: "80%",
+    height: "80%",
+    borderRadius: 15,
+    backgroundColor:'#f3f4f6',
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  buttonsWrapper:{
+    
+    marginTop: 15,
+    width: "80%",
+    height: "30%",
+    alignItems: "center",
+
   },
 });

@@ -12,6 +12,10 @@ export default function App() {
     alert("Alerta logout desde app");
   }
 
+  const handleForgot = () => {
+    alert("Olvidaste la contrasena?");
+  }
+
   return (
     <View style={styles.container}>
       <Text>Open up App</Text>
@@ -27,7 +31,13 @@ export default function App() {
             onClick={handleOnLogout}
             variant={'secondary'} 
             />
+           <CustomButton
+            title={'Olvidaste la contrasena?'}
+            onClick={handleForgot}
+            variant={'tertiary'}        
+        />
         </View>
+
       </View>
     </View>
   );

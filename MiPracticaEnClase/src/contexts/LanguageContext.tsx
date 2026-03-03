@@ -14,13 +14,12 @@ type LanguageContextType = {
 const translations = {
     en: {signIn: 'Sign In', 
         welcome: 'Welcome',
-        enterEmail: 'Please fill your email',
-        exit: 'exit'
+        enterEmail: 'Please fill your mail',
+        exit: 'Exit App',
     },
     es: {signIn: 'Iniciar Sesion', 
         welcome: 'Bienvenido',
         enterEmail: 'Ingrese su correo',
-        exit: 'Salir'
     },
     de: {signIn: 'Anmelden',
         welcome: 'Wilkommen',
@@ -34,6 +33,7 @@ const translations = {
 const i18n = new I18n(translations);
 
 //paso 3: definir idioma por defecto
+i18n.locale = 'es';
 i18n.defaultLocale = 'en';
 i18n.enableFallback = true;
 
@@ -58,7 +58,7 @@ export const LanguageProvider = ({children}: {children: React.ReactNode}) => {
             if (storedLanguage){
                 setLanguage(storedLanguage as Language);
                 i18n.locale = storedLanguage;
-            }else if(i18n.locale){
+            }else{
                 i18n.locale = i18n.defaultLocale;
             }
         };
